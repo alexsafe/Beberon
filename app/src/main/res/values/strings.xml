@@ -4,4 +4,14 @@
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
     <string name="facebook_app_id">102868783243916</string>
+
+    <string name="drawer_open">Drawer opened</string>
+    <string name="drawer_close">Drawer closed</string>
+    
+    <string-array name="drawer_list">
+        <item>Item 1</item>
+        <item>Item 2</item>
+        <item>Item 3</item>
+        <item>Item 4</item>
+    </string-array>
 </resources>

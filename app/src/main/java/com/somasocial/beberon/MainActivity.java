@@ -5,11 +5,19 @@ import android.content.Intent;
 import android.content.pm.PackageInstaller;
 import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
+import android.support.v4.view.GravityCompat;
+import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarActivity;
+import android.support.v7.app.ActionBarDrawerToggle;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 import android.widget.TextView;
 
 import com.facebook.AccessToken;
@@ -26,7 +34,10 @@ import com.facebook.appevents.AppEventsLogger;
 import com.facebook.login.LoginManager;
 import com.facebook.login.LoginResult;
 import com.facebook.login.widget.LoginButton;
+import android.widget.BaseAdapter;
 import android.media.tv.TvInputService.Session;
+import android.widget.Toast;
+
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -35,7 +46,7 @@ import java.util.Arrays;
 //import android.content.pm.PackageInstaller.Session;
 
 
-public class MainActivity extends ActionBarActivity {
+public class MainActivity extends BaseActivity {
 
     LoginButton loginButton;
     TextView message;
@@ -43,14 +54,22 @@ public class MainActivity extends ActionBarActivity {
     ProfileTracker profileTracker;
     private AccessTokenTracker accessTokenTracker;
     private boolean isResumed = false;
+    private DrawerLayout drawer;
+    ListView mDrawerList;
+    String[] mDrawerListItems;
+    ActionBarDrawerToggle mDrawerToggle;
+    private Toolbar toolbar;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         FacebookSdk.sdkInitialize(getApplicationContext());
 
-
-
+        loginButton = (LoginButton) findViewById(R.id.login_button);
+        message = (TextView) findViewById(R.id.message);
+        Log.d("tesat","oncreate");
 //        LoginManager.getInstance().logOut();
         accessTokenTracker = new AccessTokenTracker() {
             @Override
@@ -96,6 +115,8 @@ public class MainActivity extends ActionBarActivity {
                 }
             }
         };
+        setActionBarIcon(R.drawable.ic_action_menu);
+        callbackManager = CallbackManager.Factory.create();
         profileTracker = new ProfileTracker() {
             @Override
             protected void onCurrentProfileChanged(
@@ -138,24 +159,58 @@ public class MainActivity extends ActionBarActivity {
 //                Log.d("test", "loginButton onException:" + exception);
 //            }
 //        });
-        setContentView(R.layout.activity_main);
-        callbackManager = CallbackManager.Factory.create();
-        loginButton = (LoginButton) findViewById(R.id.login_button);
-        message = (TextView) findViewById(R.id.message);
 
-//
-//        if(AccessToken.getCurrentAccessToken()!=null)
-//        {
-//            Log.v("User is login","YES");
-//
-//        }
-//        else
-//        {
-//            Log.v("User is not login","OK");
-//            LoginManager.getInstance().logInWithReadPermissions(MainActivity.this, (Arrays.asList("public_profile", "user_friends","user_birthday","user_about_me","email")));
-//        }
 
-//        LoginManager.getInstance().logInWithReadPermissions(this, Arrays.asList("public_profile", "email", "user_friends"));
+        Toolbar toolbar = (Toolbar)findViewById(R.id.toolbar);
+
+        if (toolbar != null) {
+
+
+        }
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
+//        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+//        getSupportActionBar().setHomeButtonEnabled(true);
+
+        drawer = (DrawerLayout) findViewById(R.id.drawer);
+        drawer.setDrawerShadow(R.drawable.drawer_shadow, Gravity.START);
+
+//        setContentView(R.layout.activity_login);
+
+//        mDrawerList = (ListView)findViewById(android.R.id.list);
+//        mDrawerListItems = getResources().getStringArray(R.array.drawer_list);
+//        mDrawerList.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, mDrawerListItems));
+//        mDrawerList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+//            @Override
+//            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+//                int editedPosition = position+1;
+//                Toast.makeText(MainActivity.this, "You selected item " + editedPosition, Toast.LENGTH_SHORT).show();
+//                drawer.closeDrawer(mDrawerList);
+//            }
+//        });
+//        mDrawerToggle = new ActionBarDrawerToggle(this,
+//                drawer,
+//                toolbar,
+//                R.string.drawer_open,
+//                R.string.drawer_close){
+//            public void onDrawerClosed(View v){
+//                super.onDrawerClosed(v);
+//                invalidateOptionsMenu();
+//                syncState();
+//            }
+//            public void onDrawerOpened(View v){
+//                super.onDrawerOpened(v);
+//                invalidateOptionsMenu();
+//                syncState();
+//            }
+//        };
+//        drawer.setDrawerListener(mDrawerToggle);
+//
+//        mDrawerToggle.syncState();
+ }
+
+    @Override protected int getLayoutResource() {
+        return R.layout.activity_main;
     }
 
     public void GoLogin(View v)
@@ -168,7 +223,6 @@ public class MainActivity extends ActionBarActivity {
                         Log.d("test", "LoginManager onSuccess:" + loginResult.getAccessToken());
                         Log.d("test", "LoginManager onSuccess:" + loginResult.getRecentlyDeniedPermissions());
                         Log.d("test", "LoginManager onSuccess:" + loginResult.getRecentlyGrantedPermissions());
-//                        message.setText("Logged in as pules!");
                         Bundle parameters = new Bundle();
                         parameters.putString("fields", "id,name,last_name,link,email,picture");
 
@@ -226,14 +280,10 @@ public class MainActivity extends ActionBarActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                drawer.openDrawer(Gravity.START);
+                return true;
         }
 
         return super.onOptionsItemSelected(item);
@@ -251,6 +301,8 @@ public class MainActivity extends ActionBarActivity {
         isResumed = true;
         // Logs 'install' and 'app activate' App Events.
         AppEventsLogger.activateApp(this);
+        accessTokenTracker.startTracking();
+        Log.d("test","accessTokenTracker.isTracking:"+accessTokenTracker.isTracking());
     }
 
     @Override
@@ -260,5 +312,15 @@ public class MainActivity extends ActionBarActivity {
         isResumed = false;
         // Logs 'app deactivate' App Event.
         AppEventsLogger.deactivateApp(this);
+    }
+
+    public void testBulb(View v)
+    {
+        Log.d("test","test bulb");
+    }
+
+    public  void testClick(View v)
+    {
+        Log.d("test","test clicked");
     }
 }
