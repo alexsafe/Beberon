@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorRegisterBg">
+
+    <TextView
+        android:id="@+id/register_in_competition"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="34dp"
+        android:text="Register in competition"
+        android:textColor="@color/colorRegisterSteps"
+        android:textSize="@dimen/title_text"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/step"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/register_in_competition"
+
+        android:layout_below="@+id/register_in_competition"
+        android:layout_marginStart="19dp"
+        android:text="Step 1. Baby Photo"
+        android:textColor="@color/colorRegisterSteps" />
+
+    <Button
+        android:id="@+id/takephoto"
+        android:layout_width="150dp"
+        android:layout_height="36dp"
+        android:layout_below="@+id/step"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="58dp"
+        android:background="@drawable/take_photo_but"
+        android:gravity="center" />
+
+    <Button
+        android:id="@+id/uploadphoto"
+        android:layout_width="150dp"
+        android:layout_height="36dp"
+        android:layout_below="@+id/takephoto"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="35dp"
+        android:background="@drawable/upload_photo_but"
+        android:gravity="center" />
+
+    <ProgressBar
+        android:id="@+id/progressBarS1"
+        style="@style/CustomProgressBarHorizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/step"
+        android:layout_alignStart="@+id/takephoto"
+        android:layout_below="@+id/step"
+        android:layout_marginTop="15dp"
+        android:max="4"
+        android:progress="1" />
+</RelativeLayout>

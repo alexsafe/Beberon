@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:background="@color/colorRegisterBg"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/register_start_game_button"
+        android:textSize="@dimen/title_text"
+        android:textColor="@color/colorRegisterSteps"
+        android:textStyle="bold"
+        android:id="@+id/register_2_title"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Step 2. Baby registration"
+        android:id="@+id/register_step2"
+        android:textSize="@dimen/title_text"
+        android:textColor="@color/colorRegisterSteps"
+        android:layout_below="@+id/register_2_title"
+        android:layout_centerHorizontal="true" />
+
+    <ImageView
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="10dp"
+        android:id="@+id/baby_reg_photo"
+        android:background="@drawable/bebe_sample"
+        android:layout_above="@+id/textView4"
+        android:layout_toStartOf="@+id/babyName" />
+
+    <EditText
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorRegisterSteps"
+        android:id="@+id/babyName"
+        android:hint="Name"
+        android:layout_marginLeft="5dp"
+        android:layout_alignTop="@+id/baby_reg_photo"
+        android:layout_alignEnd="@+id/register_step2" />
+
+    <EditText
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/babySex"
+        android:hint="Boy/girl"
+        android:textColor="@color/colorRegisterSteps"
+        android:layout_below="@+id/babyName"
+        android:layout_alignStart="@+id/babyName" />
+
+    <EditText
+        android:layout_width="80dp"
+        android:textColor="@color/colorRegisterSteps"
+        android:layout_height="wrap_content"
+        android:inputType="date"
+        android:ems="10"
+        android:hint="birthday"
+        android:id="@+id/dob"
+        android:layout_below="@+id/babySex"
+        android:layout_alignStart="@+id/babySex" />
+
+    <EditText
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/city"
+        android:textColor="@color/colorRegisterSteps"
+        android:hint="City"
+        android:layout_below="@+id/dob"
+        android:layout_alignEnd="@+id/register_step2" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Entry categories"
+        android:textSize="@dimen/title_text"
+        android:textColor="@color/colorRegisterSteps"
+        android:textStyle="bold"
+        android:id="@+id/textView4"
+        android:layout_centerVertical="true"
+        android:layout_alignStart="@+id/register_2_title" />
+
+    <Button
+        android:layout_width="80dp"
+        style="@style/btnStyleRegister"
+        android:layout_height="30dp"
+        android:layout_marginTop="10dp"
+        android:text="Best blue eyes"
+        android:textSize="10sp"
+        android:id="@+id/tag1"
+        android:layout_below="@+id/textView4"
+        android:layout_alignStart="@+id/register_step2" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Andrei is the shit"
+        android:layout_marginTop="10dp"
+        android:textColor="@color/colorRegisterSteps"
+        android:textSize="@dimen/subtitle_text"
+        android:id="@+id/defaultRegisterText"
+        android:layout_below="@+id/tag1"
+        android:layout_centerHorizontal="true" />
+
+    <ImageButton
+        android:layout_width="150dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="20dp"
+        android:id="@+id/next_register_but"
+        android:background="@drawable/register_next_but"
+        android:layout_below="@+id/defaultRegisterText"
+        android:layout_centerHorizontal="true" />
+
+    <ProgressBar
+        style="@style/CustomProgressBarHorizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/progressBarRegisterBaby"
+        android:max="4"
+        android:progress="2"
+
+        android:layout_below="@+id/register_step2"
+        android:layout_alignStart="@+id/register_step2"
+        android:layout_alignEnd="@+id/baby_reg_photo" />
+</RelativeLayout>

@@ -3,6 +3,12 @@
     <color name="colorPrimary">#fff5d0</color>
     <color name="colorgridStartContest">#e7f7ff</color>
     <color name="colorgridStartContestHead">#5bcfcc</color>
+    <color name="bebeCoins">#ff9999</color>
+    <color name="colorRegister">#886e02</color>
+    <color name="colorRegisterSteps">#23d5d0</color>
+    <color name="colorRegisterProgress">#5bcfcc</color>
+    <color name="colorRegisterBg">#e6fbfa</color>
+
     <color name="colorPrimaryDark">@color/material_blue_grey_900</color>
 
     <color name="colorSecondary">@color/material_deep_teal_200</color>

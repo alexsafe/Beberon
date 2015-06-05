@@ -1,7 +1,6 @@
 package com.somasocial.beberon;
 
 import android.app.Activity;
-import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -36,7 +35,7 @@ public class StartGame extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.start_game_layout);
+        setContentView(R.layout.activity_start_game_layout);
         page = 0;
         gridview = (GridView) findViewById(R.id.gridView);
         progressBar = (ProgressBar)findViewById(R.id.progressBar);
@@ -59,14 +58,15 @@ public class StartGame extends Activity {
                                     int position, long id) {
                 //change adapter and UI
 
+                Intent intent=new Intent(StartGame.this, MainViewActivity.class);
+//                    Intent intent=new Intent(StartGame.this, MainActivity.class);
+                startActivity(intent);
                 page++;
                 int picturesRemaining=4-page;
 
                 Log.d("test", "clicked on " + position + " page: " + page);
                 if (picturesRemaining==0)
                 {
-                    Intent intent=new Intent(StartGame.this, MainActivity.class);
-                    startActivity(intent);
 
                 }
                 else {

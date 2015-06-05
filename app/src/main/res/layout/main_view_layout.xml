@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    android:orientation="vertical">
+
+
+    <ImageButton
+        android:id="@+id/imageButton5"
+        android:layout_width="150dp"
+        android:layout_height="30dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginEnd="47dp"
+        android:layout_marginTop="14dp"
+        android:layout_toStartOf="@+id/imageView"
+        android:background="@drawable/bebe_logo" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/imageButton5"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="20dp"
+        android:background="@drawable/bebecoin_bibe" />
+
+    <TextView
+        android:id="@+id/bebeCoins"
+        android:layout_width="20dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/imageView"
+        android:layout_alignEnd="@+id/imageView"
+        android:paddingLeft="5dp"
+        android:text="2"
+        android:textColor="@color/bebeCoins"
+        android:textSize="13sp"
+        android:textStyle="bold" />
+
+    <ImageView
+        android:id="@+id/votes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/imageButton5"
+        android:layout_toStartOf="@+id/winners"
+        android:background="@drawable/votes" />
+
+    <ImageView
+        android:id="@+id/fbPic"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignTop="@+id/imageButton5"
+        android:layout_marginStart="21dp"
+        android:background="@drawable/fb_default_pic" />
+
+    <ImageButton
+        android:id="@+id/home"
+        android:layout_width="25dp"
+        android:layout_height="33dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="17dp"
+        android:layout_marginLeft="40dp"
+        android:background="@drawable/home" />
+
+    <ImageButton
+        android:id="@+id/contest"
+        android:layout_width="33dp"
+        android:layout_height="33dp"
+        android:layout_alignBottom="@+id/home"
+        android:layout_alignStart="@+id/home"
+        android:layout_marginLeft="@dimen/main_bottom_icon_margin"
+        android:background="@drawable/contest" />
+
+    <ImageButton
+        android:id="@+id/winners"
+        android:layout_width="33dp"
+        android:layout_height="33dp"
+        android:layout_alignStart="@+id/contest"
+        android:layout_alignTop="@+id/contest"
+        android:layout_marginLeft="@dimen/main_bottom_icon_margin"
+        android:background="@drawable/winners" />
+
+    <ImageButton
+        android:id="@+id/achievements"
+        android:layout_width="50dp"
+        android:layout_height="33dp"
+        android:layout_alignStart="@+id/winners"
+        android:layout_alignTop="@+id/winners"
+        android:layout_marginLeft="@dimen/main_bottom_icon_margin"
+        android:background="@drawable/achievments" />
+
+    <ImageView
+        android:id="@+id/more"
+        android:layout_width="33dp"
+        android:layout_height="33dp"
+        android:layout_alignBottom="@+id/achievements"
+        android:layout_alignStart="@+id/achievements"
+        android:layout_marginLeft="80dp"
+        android:layout_marginRight="40dp"
+        android:background="@drawable/more" />
+
+
+    <RelativeLayout
+        android:id="@+id/fragment_container"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="80dp"
+        android:layout_marginBottom="80dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentBottom="true"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />
+</RelativeLayout>

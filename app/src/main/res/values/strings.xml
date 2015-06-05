@@ -16,4 +16,8 @@
     </string-array>
 
     <string name="register_start_game_button">Register your baby</string>
+    <string name="hello">Hello</string>
+    <string name="main_subtext">What would you like to do?</string>
+    <string name="takephoto">Take a photo</string>
+    <string name="uploadphoto">Upload photo</string>
 </resources>
