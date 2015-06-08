@@ -9,12 +9,12 @@
         android:id="@+id/register_2_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignStart="@+id/next_register_but"
         android:text="@string/register_start_game_button"
         android:textColor="@color/colorRegisterSteps"
         android:textSize="@dimen/title_text"
-        android:textStyle="bold"
-        android:layout_alignParentTop="true"
-        android:layout_alignStart="@+id/next_register_but" />
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/register_step2"
@@ -29,60 +29,80 @@
     <ImageView
         android:id="@+id/baby_reg_photo"
         android:layout_width="150dp"
+        android:layout_marginTop="10dp"
         android:layout_height="150dp"
-        android:background="@drawable/bebe_sample"
         android:layout_below="@+id/progressBarRegisterBaby"
-        android:layout_toStartOf="@+id/babySex" />
+        android:layout_toStartOf="@+id/babySex"
+        android:background="@drawable/bebe_sample" />
 
     <EditText
         android:id="@+id/babyName"
         android:layout_width="80dp"
-        android:layout_height="wrap_content"
+        android:layout_height="20dp"
         android:layout_alignEnd="@+id/register_step2"
         android:layout_alignTop="@+id/baby_reg_photo"
         android:layout_marginLeft="5dp"
+        android:background="@drawable/custom_edittext"
+        android:gravity="center"
         android:hint="Name"
-        android:textColor="@color/colorRegisterSteps" />
+        android:textColor="@color/colorRegisterSteps"
+        android:textSize="@dimen/subtitle_text" />
 
     <EditText
         android:id="@+id/babySex"
         android:layout_width="80dp"
+        android:layout_marginTop="5dp"
         android:layout_height="wrap_content"
         android:layout_alignStart="@+id/babyName"
         android:layout_below="@+id/babyName"
-        android:hint="Boy/girl"
-        android:textColor="@color/colorRegisterSteps" />
+        android:height="20dp"
+        android:background="@drawable/custom_edittext"
+        android:gravity="center"
+        android:hint="Boy or girl"
+        android:textColor="@color/colorRegisterSteps"
+        android:textSize="@dimen/subtitle_text" />
 
     <EditText
         android:id="@+id/dob"
         android:layout_width="80dp"
-        android:layout_height="wrap_content"
+        android:layout_height="20dp"
+        android:layout_marginTop="5dp"
         android:layout_alignStart="@+id/babySex"
         android:layout_below="@+id/babySex"
+        android:height="20dp"
+        android:background="@drawable/custom_edittext"
         android:ems="10"
-        android:hint="birthday"
+        android:gravity="center"
+        android:hint="Birthday"
         android:inputType="date"
-        android:textColor="@color/colorRegisterSteps" />
+        android:textColor="@color/colorRegisterSteps"
+        android:textSize="@dimen/subtitle_text" />
 
     <EditText
         android:id="@+id/city"
+        android:layout_marginTop="5dp"
         android:layout_width="80dp"
-        android:layout_height="wrap_content"
+        android:layout_height="20dp"
         android:layout_alignEnd="@+id/register_step2"
         android:layout_below="@+id/dob"
+        android:height="20dp"
+        android:background="@drawable/custom_edittext"
+        android:gravity="center"
         android:hint="City"
-        android:textColor="@color/colorRegisterSteps" />
+        android:textColor="@color/colorRegisterSteps"
+        android:textSize="@dimen/subtitle_text" />
 
     <TextView
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/next_register_but"
+        android:layout_below="@+id/baby_reg_photo"
         android:text="Entry categories"
         android:textColor="@color/colorRegisterSteps"
+
         android:textSize="@dimen/title_text"
-        android:textStyle="bold"
-        android:layout_below="@+id/city"
-        android:layout_alignStart="@+id/next_register_but" />
+        android:textStyle="bold" />
 
     <Button
         android:id="@+id/tag1"
