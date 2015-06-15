@@ -19,5 +19,13 @@
     <string name="hello">Hello</string>
     <string name="main_subtext">What would you like to do?</string>
     <string name="takephoto">Take a photo</string>
+    <string name="ok">OK</string>
     <string name="uploadphoto">Upload photo</string>
+    <string name="success">Success</string>
+    <string name="album_name">Beberon</string>
+
+    <string name="error">Error</string>
+    <string name="status_update">Updating status for %1$s at %2$s</string>
+    <string name="photo_post">Photo Post</string>
+    <string name="successfully_posted_post">Post ID: %1$s</string>
 </resources>
