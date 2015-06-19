@@ -96,7 +96,7 @@ public class StartGame extends Activity implements Animation.AnimationListener{
                 ImageView heart=new ImageView(StartGame.this);
                 heart.setImageResource(R.drawable.inima);
 //                gridview.addView(heart);
-//                imageView.setImageResource(mHeartsds[position]);
+                imageView.setImageResource(mHeartsds[position]);
 
                 // load the animation
                 animZoomOut = AnimationUtils.loadAnimation(getApplicationContext(),
@@ -207,6 +207,8 @@ public class StartGame extends Activity implements Animation.AnimationListener{
     @Override
     public void onAnimationEnd(Animation animation) {
         Log.d("test","onAnimationEnd :"+animation);
+        Log.d("test","page on end :"+page);
+        loadImages(page);
          mCurrentAnimator = null;
     }
 
