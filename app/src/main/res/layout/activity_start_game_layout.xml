@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    android:orientation="vertical">
+
+    <ImageButton
+        android:id="@+id/imageButton4"
+        android:layout_width="150dp"
+        android:layout_height="40dp"
+        android:layout_gravity="center_horizontal"
+        android:background="@drawable/bebe_logo" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="the cutest competition in the world"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+    <RelativeLayout
+        android:layout_width="299dp"
+        android:layout_height="368dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="30dp"
+        android:background="#fff"
+        android:gravity="center_horizontal">
+
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="10dp"
+            android:background="@color/colorgridStartContest">
+
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:text="TAP the cutest picture"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="#23d5d0" />
+
+            <GridView
+                android:id="@+id/gridView"
+                android:layout_width="250dp"
+                android:layout_height="250dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:background="#fff"
+                android:layout_marginBottom="30dp"
+                android:horizontalSpacing="0dp"
+                android:numColumns="2"
+                android:stretchMode="columnWidth"
+                android:verticalSpacing="0dp" />
+
+            <ProgressBar
+                android:id="@+id/progressBar"
+                style="@style/CustomProgressBarHorizontal"
+                android:layout_width="wrap_content"
+
+                android:layout_height="wrap_content"
+                android:layout_alignEnd="@+id/gridView"
+                android:layout_alignStart="@+id/gridView"
+                android:layout_below="@+id/smalltext"
+                android:indeterminate="false"
+                android:progress="@integer/abc_config_activityDefaultDur" />
+
+            <TextView
+                android:id="@+id/smalltext"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/textView3"
+                android:layout_centerHorizontal="true"
+                android:text="asdasd"
+                android:textColor="@color/colorgridStartContestHead"
+                android:textSize="10sp" />
+
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/button"
+        style="@style/btnStyle1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="20dp"
+        android:text="@string/register_start_game_button"
+        android:textColor="#fff" />
+</LinearLayout>
