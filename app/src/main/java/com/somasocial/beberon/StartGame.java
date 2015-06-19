@@ -102,7 +102,7 @@ public class StartGame extends Activity implements Animation.AnimationListener{
 
 
                 //change adapter and UI
-                ImageView imageView = (ImageView) v;
+//                ImageView imageView = (ImageView) v;
                 imageView.startAnimation(animZoomOut);
                 imageView.startAnimation(animZoomIn);
 
