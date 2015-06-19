@@ -24,6 +24,11 @@
     <string name="success">Success</string>
     <string name="album_name">Beberon</string>
 
+    <string name="hello_user">Hello %1$s!</string>
+    <string name="cancelled">Cancelled</string>
+    <string name="permission_not_granted">Unable to perform selected action because permissions were not granted.</string>
+
+
     <string name="error">Error</string>
     <string name="status_update">Updating status for %1$s at %2$s</string>
     <string name="photo_post">Photo Post</string>

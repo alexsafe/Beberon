@@ -45,10 +45,10 @@
         android:layout_toStartOf="@+id/winners"
         android:background="@drawable/votes" />
 
-    <ImageView
+    <com.somasocial.utils.ProfilePictureView
         android:id="@+id/fbPic"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
         android:layout_alignParentStart="true"
         android:layout_alignTop="@+id/imageButton5"
         android:layout_marginStart="21dp"

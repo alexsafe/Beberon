@@ -447,6 +447,7 @@ Log.d("test","selected image:"+selectedImageUri.getPath());
         args.putString("img", img);
         registerBabyFragment.setArguments(args);
         fragmentTransaction.replace(R.id.fragment_container, registerBabyFragment, "HELLO");
+        fragmentTransaction.addToBackStack(null);
         fragmentTransaction.commit();
     }
 
