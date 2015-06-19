@@ -92,7 +92,11 @@ public class StartGame extends Activity implements Animation.AnimationListener{
                                     int position, long id) {
 
                 ImageView imageView = (ImageView) v;
-                imageView.setImageResource(mHeartsds[position]);
+
+                ImageView heart=new ImageView(StartGame.this);
+                heart.setImageResource(R.drawable.inima);
+//                gridview.addView(heart);
+//                imageView.setImageResource(mHeartsds[position]);
 
                 // load the animation
                 animZoomOut = AnimationUtils.loadAnimation(getApplicationContext(),
@@ -103,7 +107,7 @@ public class StartGame extends Activity implements Animation.AnimationListener{
 
                 //change adapter and UI
 //                ImageView imageView = (ImageView) v;
-                imageView.startAnimation(animZoomOut);
+//                imageView.startAnimation(animZoomOut);
                 imageView.startAnimation(animZoomIn);
 
 
@@ -203,7 +207,7 @@ public class StartGame extends Activity implements Animation.AnimationListener{
     @Override
     public void onAnimationEnd(Animation animation) {
         Log.d("test","onAnimationEnd :"+animation);
-        mCurrentAnimator = null;
+         mCurrentAnimator = null;
     }
 
     @Override
